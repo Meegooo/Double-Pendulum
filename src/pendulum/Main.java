@@ -23,7 +23,7 @@ public class Main extends Application {
 	private static  ScheduledExecutorService executorSimulatorService = Executors.newSingleThreadScheduledExecutor();
 	private static  ScheduledFuture<?> scheduledDrawerFuture;
 	private static  ScheduledFuture<?> scheduledSimulatorFuture;
-	private static Drawer drawer;
+	private static Drawer  drawer;
 	private static Simulator simulator;
 
     @Override
@@ -44,7 +44,7 @@ public class Main extends Application {
 	    drawer = new Drawer();
 	    simulator = new Simulator();
 	    scheduledDrawerFuture = executorDrawerService.scheduleAtFixedRate(drawer, 0, 10, TimeUnit.MILLISECONDS);
-	    scheduledSimulatorFuture = executorSimulatorService.scheduleAtFixedRate(simulator, 0, 100, TimeUnit.MICROSECONDS);
+	    scheduledSimulatorFuture = executorSimulatorService.scheduleAtFixedRate(simulator, 0, 1, TimeUnit.MICROSECONDS);
 
     }
 
