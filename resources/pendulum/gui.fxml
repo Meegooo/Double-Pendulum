@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.canvas.Canvas?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane fx:id="pane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pendulum.Controller">
+   <center>
+      <StackPane fx:id="stackPane_canvas" BorderPane.alignment="CENTER">
+         <children>
+            <Canvas fx:id="canvas" height="500.0" width="500.0" />
+         </children>
+      </StackPane>
+   </center>
+   <left>
+      <GridPane hgap="10.0" minHeight="0.0" prefHeight="0.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="110.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
+          <RowConstraints minHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
+          <RowConstraints minHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="0.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+            <RowConstraints minHeight="10.0" prefHeight="40.0" vgrow="NEVER" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="textField_mass1" onAction="#onTextFieldsParams" GridPane.columnIndex="1" />
+            <TextField fx:id="textField_mass2" onAction="#onTextFieldsParams" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="textField_angle1" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="textField_angle2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Масса 1 (кг)">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Масса 2 (кг)" GridPane.rowIndex="1">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Угол 1 (град.)" GridPane.rowIndex="2">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Угол 2 (град.)" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="G (м/с^2)" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="textField_g" onAction="#onTextFieldsParams" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Button fx:id="button_restart" mnemonicParsing="false" onAction="#onButtonRestart" text="Restart" GridPane.halignment="CENTER" GridPane.rowIndex="8" />
+            <Label text="Длина 1 (м)" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Label text="Длина 2 (м)" GridPane.rowIndex="5">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <TextField fx:id="textField_length1" onAction="#onTextFieldsParams" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="textField_length2" onAction="#onTextFieldsParams" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="textField_scale" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="Масштаб (м/пикс)" GridPane.rowIndex="7">
+               <padding>
+                  <Insets left="10.0" />
+               </padding>
+            </Label>
+            <Button mnemonicParsing="false" onAction="#onButtonResetTrace" text="Reset Trace" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8" GridPane.valignment="CENTER" />
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>
